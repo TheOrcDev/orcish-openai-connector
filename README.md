@@ -1,0 +1,1 @@
+Simple completion OpenAI method
