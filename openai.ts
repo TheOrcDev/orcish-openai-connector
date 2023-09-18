@@ -4,7 +4,7 @@ export async function getChatGPTCompletion(input: string) {
     Authorization: `Bearer ${process.env.GPT_API_KEY}`,
     "Access-Control-Allow-Origin": "*",
   };
-  console.log(input);
+
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers,
@@ -17,7 +17,6 @@ export async function getChatGPTCompletion(input: string) {
   });
 
   const data = await response.json();
-  console.log(data);
 
   if (data.choices[0].finish_reason === "length") {
     console.log("Too long prompt");
