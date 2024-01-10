@@ -1,5 +1,8 @@
 {
     "name": "openai-connector",
     "version": "1.0.0",
-    "author": "OrcDev <urosmiric88@gmail.com>"
-  }
+    "author": "OrcDev <urosmiric88@gmail.com>",
+    "devDependencies": {
+        "@types/node": "^20.10.8"
+    }
+}
