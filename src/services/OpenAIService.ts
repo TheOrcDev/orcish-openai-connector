@@ -47,7 +47,7 @@ export class OpenAIService {
         method: "POST",
         headers: this.headers,
         body: JSON.stringify({
-          model: process.env.OPENAI_IMAGE_MODEL,
+          model: process.env.OPENAI_IMAGE_MODEL ?? "dall-e-3",
           prompt,
           n: 1,
           size: process.env.OPENAI_IMAGE_RESOLUTION ?? "1792x1024",
