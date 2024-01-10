@@ -15,13 +15,13 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/theorcdev/gpt-orc-companion.git
+    git clone https://github.com/theorcdev/orcish-openai-connector.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd gpt-orc-companion
+    cd orcish-openai-connector
     ```
 
 3. Install dependencies using pnpm:
