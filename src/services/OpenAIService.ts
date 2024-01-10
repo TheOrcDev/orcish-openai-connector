@@ -8,6 +8,10 @@ export class OpenAIService {
   private headers: OpenAIHeaders;
 
   constructor() {
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error("OPENAI_API_KEY is required");
+    }
+
     this.headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
