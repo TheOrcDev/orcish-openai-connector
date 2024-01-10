@@ -6,12 +6,12 @@ dotenv.config();
 async function run() {
   const openaiService = new OpenAIService();
 
-  const chatGPTResult = await openaiService.getChatGPTCompletion(
-    "Cool orcish name"
-  );
-  const dalle3Image = await openaiService.getDalle3Image(
-    "Orc working on a computer"
-  );
+  const [chatGPTResult, dalle3Image] = await Promise.all([
+    openaiService.getChatGPTCompletion("Cool orcish name"),
+    openaiService.getDalle3Image("Orc working on a computer"),
+  ]);
+
+  // Use chatGPTResult and dalle3Image as needed
 }
 
 run();
