@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "author": "OrcDev <urosmiric88@gmail.com>",
     "scripts": {
-        "lint": "eslint . --ext .ts"
+        "lint": "eslint . --ext .ts",
+        "start": "tsc && node dist/main.js"
     },
     "devDependencies": {
         "@types/node": "^20.10.8",
