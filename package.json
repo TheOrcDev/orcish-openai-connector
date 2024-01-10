@@ -4,7 +4,8 @@
     "author": "OrcDev <urosmiric88@gmail.com>",
     "scripts": {
         "lint": "eslint . --ext .ts",
-        "start": "tsc && node dist/main.js"
+        "start": "tsc && node dist/main.js",
+        "preinstall": "npx only-allow pnpm"
     },
     "devDependencies": {
         "@types/node": "^20.10.8",
