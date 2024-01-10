@@ -1,5 +1,7 @@
 # Orcish OpenAI Connector
 
+![orcish-openai-connector](https://github.com/TheOrcDev/orcish-openai-connector/assets/7549148/d505215b-7e22-44b2-84b1-4bdb12709212)
+
 Orcish OpenAI Connector is a simple completion and image creator application powered by OpenAI's language and image models.
 
 ## Getting Started
