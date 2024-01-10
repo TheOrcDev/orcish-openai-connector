@@ -15,7 +15,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/theorcdev/orcish-openai-connector.git
+    git clone https://github.com/TheOrcDev/orcish-openai-connector.git
     ```
 
 2. Navigate to the project directory:
