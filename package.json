@@ -1,7 +1,9 @@
 {
-    "name": "openai-connector",
+    "name": "orcish-openai-connector",
     "version": "1.0.0",
     "author": "OrcDev <urosmiric88@gmail.com>",
+    "keywords": ["openai", "connector", "gpt", "orc", "orcdev"],
+    "license": "MIT",
     "scripts": {
         "lint": "eslint . --ext .ts",
         "start": "tsc && node dist/main.js",
