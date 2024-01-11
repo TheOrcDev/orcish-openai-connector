@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "target": "es2021",
     "module": "commonjs",
     "strict": true,
@@ -10,13 +9,9 @@
     "moduleResolution": "node",
     "jsx": "react",
     "resolveJsonModule": true,
-    "baseUrl": "./src",
-    "paths": {
-      "*": ["types/*"]
-    },
     "noImplicitAny": true,
     "outDir": "./dist"
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

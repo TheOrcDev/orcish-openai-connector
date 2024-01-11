@@ -1,6 +1,6 @@
 {
     "name": "orcish-openai-connector",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "author": "OrcDev <urosmiric88@gmail.com>",
     "keywords": ["openai", "connector", "gpt", "orc", "orcdev"],
     "license": "MIT",
