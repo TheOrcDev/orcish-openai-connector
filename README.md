@@ -50,7 +50,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
     });
 
     const dalle3Image = await openaiService.getDalle3Image('Orc working on a computer', {
-      imageResolution: '1920x1080',
+      imageResolution: '1792x1024',
       // Add other options as needed
     });
     ```
@@ -88,7 +88,7 @@ const chatGPTResult = await openaiService.getChatGPTCompletion('Cool orcish name
 });
 
 const dalle3Image = await openaiService.getDalle3Image('Orc working on a computer', {
-  imageResolution: '1920x1080',
+  imageResolution: '1792x1024',
   // Add other options as needed
 });
 ```
