@@ -4,30 +4,42 @@ type OpenAIHeaders = {
   "Access-Control-Allow-Origin": string;
 };
 
+type OpenAIServiceOptions = {
+  apiKey?: string;
+  gptModel?: string;
+  gptTemperature?: string;
+  gptMaxTokens?: string;
+  imageModel?: string;
+  imageResolution?: string;
+};
+
 export class OpenAIService {
   private headers: OpenAIHeaders;
 
-  constructor() {
-    if (!process.env.OPENAI_API_KEY) {
-      throw new Error("OPENAI_API_KEY is required");
+  constructor(options: OpenAIServiceOptions) {
+    if (!options.apiKey) {
+      throw new Error("API key is required");
     }
 
     this.headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer ${options.apiKey}`,
       "Access-Control-Allow-Origin": "*",
     };
   }
 
-  async getChatGPTCompletion(input: string): Promise<string> {
+  async getChatGPTCompletion(
+    input: string,
+    options: OpenAIServiceOptions
+  ): Promise<string> {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
-        model: process.env.OPENAI_GPT_MODEL ?? "gpt-3.5-turbo",
+        model: options.gptModel || "gpt-3.5-turbo",
         messages: [{ role: "user", content: input }],
-        temperature: parseInt(process.env.OPENAI_GPT_TEMPERATURE ?? "0.8"),
-        max_tokens: parseInt(process.env.OPENAI_GPT_MAX_TOKENS ?? "1048"),
+        temperature: options.gptTemperature || 0.8,
+        max_tokens: options.gptMaxTokens || 1048,
       }),
     });
 
@@ -40,17 +52,20 @@ export class OpenAIService {
     return data.choices[0].message.content;
   }
 
-  async getDalle3Image(prompt: string): Promise<string> {
+  async getDalle3Image(
+    prompt: string,
+    options: OpenAIServiceOptions
+  ): Promise<string> {
     const response = await fetch(
       "https://api.openai.com/v1/images/generations",
       {
         method: "POST",
         headers: this.headers,
         body: JSON.stringify({
-          model: process.env.OPENAI_IMAGE_MODEL ?? "dall-e-3",
+          model: options.imageModel || "dall-e-3",
           prompt,
           n: 1,
-          size: process.env.OPENAI_IMAGE_RESOLUTION ?? "1792x1024",
+          size: options.imageResolution || "1792x1024",
         }),
       }
     );
