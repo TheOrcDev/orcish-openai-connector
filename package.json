@@ -9,7 +9,6 @@
         "build": "tsc",
         "start": "ts-node src/OpenAIService.ts",
         "preinstall": "npx only-allow pnpm",
-        "postinstall": "husky install",
         "commit": "./node_modules/cz-customizable/standalone.js"
     },
     "devDependencies": {
