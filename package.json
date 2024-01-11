@@ -6,6 +6,7 @@
     "license": "MIT",
     "scripts": {
         "lint": "eslint . --ext .ts",
+        "build": "tsc",
         "start": "tsc && node dist/main.js",
         "preinstall": "npx only-allow pnpm",
         "postinstall": "husky install",
