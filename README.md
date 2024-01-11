@@ -38,7 +38,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
     import { OrcishOpenAIService } from 'orcish-openai-connector';
 
     // Create an instance of OrcishOpenAIService
-    const OrcishOpenAIService = new OrcishOpenAIService({
+    const orcishOpenAIService = new OrcishOpenAIService({
       apiKey: 'your_openai_api_key',
       // Add other options as needed
     });
@@ -72,7 +72,7 @@ Example:
 import { OrcishOpenAIService } from 'orcish-openai-connector';
 
 // Create an instance of OrcishOpenAIService with custom options
-const OrcishOpenAIService = new OrcishOpenAIService({
+const orcishOpenAIService = new OrcishOpenAIService({
   apiKey: 'your_openai_api_key',
   gptModel: 'gpt-3.5-turbo',
   gptTemperature: '0.7',
