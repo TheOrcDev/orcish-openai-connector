@@ -4,12 +4,12 @@
     "author": "OrcDev <urosmiric88@gmail.com>",
     "keywords": ["openai", "connector", "gpt", "orc", "orcdev"],
     "license": "MIT",
-    "main": "dist/OpenAIService.js",
-    "types": "dist/OpenAIService.d.ts",
+    "main": "dist/OrcishOpenAIService.js",
+    "types": "dist/OrcishOpenAIService.d.ts",
     "scripts": {
       "lint": "eslint . --ext .ts",
       "build": "tsc",
-      "start": "ts-node src/OpenAIService.ts",
+      "start": "ts-node src/OrcishOpenAIService.ts",
       "preinstall": "npx only-allow pnpm",
       "commit": "./node_modules/cz-customizable/standalone.js"
     },

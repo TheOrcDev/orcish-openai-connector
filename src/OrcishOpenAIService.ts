@@ -4,7 +4,7 @@ type OpenAIHeaders = {
   "Access-Control-Allow-Origin": string;
 };
 
-type OpenAIServiceOptions = {
+type OrcishOpenAIServiceOptions = {
   apiKey?: string;
   gptModel?: string;
   gptTemperature?: string;
@@ -13,10 +13,10 @@ type OpenAIServiceOptions = {
   imageResolution?: string;
 };
 
-export class OpenAIService {
+export class OrcishOpenAIService {
   private headers: OpenAIHeaders;
 
-  constructor(options: OpenAIServiceOptions) {
+  constructor(options: OrcishOpenAIServiceOptions) {
     if (!options.apiKey) {
       throw new Error("API key is required");
     }
@@ -30,7 +30,7 @@ export class OpenAIService {
 
   async getChatGPTCompletion(
     input: string,
-    options: OpenAIServiceOptions
+    options: OrcishOpenAIServiceOptions
   ): Promise<string> {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -54,7 +54,7 @@ export class OpenAIService {
 
   async getDalle3Image(
     prompt: string,
-    options: OpenAIServiceOptions
+    options: OrcishOpenAIServiceOptions
   ): Promise<string> {
     const response = await fetch(
       "https://api.openai.com/v1/images/generations",
