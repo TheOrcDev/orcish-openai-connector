@@ -7,7 +7,7 @@
     "scripts": {
         "lint": "eslint . --ext .ts",
         "build": "tsc",
-        "start": "tsc && node dist/main.js",
+        "start": "ts-node src/OpenAIService.ts",
         "preinstall": "npx only-allow pnpm",
         "postinstall": "husky install",
         "commit": "./node_modules/cz-customizable/standalone.js"
@@ -18,7 +18,9 @@
         "@typescript-eslint/parser": "^6.18.1",
         "cz-customizable": "^7.0.0",
         "eslint": "^8.56.0",
-        "husky": "^8.0.3"
+        "husky": "^8.0.3",
+        "typescript": "^4.5.5",
+        "ts-node": "^10.4.0"
     },
     "dependencies": {
         "dotenv": "^16.3.1"
