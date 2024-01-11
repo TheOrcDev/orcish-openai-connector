@@ -6,7 +6,7 @@ Orcish OpenAI Connector is a simple completion and image creator application pow
 
 ## Getting Started
 
-Follow these steps to set up and run the Orcish OpenAI Connector on your local machine.
+Follow these steps to set up and run the Orcish OpenAI Connector.
 
 ### Prerequisites
 
@@ -14,42 +14,21 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Installation
 
-1. Clone the repository to your local machine:
+1. Install the package on your project:
 
     ```bash
-    git clone https://github.com/TheOrcDev/orcish-openai-connector.git
+    npm i orcish-openai-connector
     ```
 
-2. Navigate to the project directory:
+    or
 
     ```bash
-    cd orcish-openai-connector
+    yarn add orcish-openai-connector
     ```
 
-3. Install dependencies using pnpm:
+    or
 
     ```bash
-    pnpm install
+    pnpm add orcish-openai-connector
     ```
 
-### Configuration
-
-1. Copy the provided `.env.example` file to create a new `.env` file:
-
-    ```bash
-    cp .env.example .env
-    ```
-
-2. Open the `.env` file in a text editor and fill in the required values:
-
-    ```env
-    OPENAI_API_KEY=your_openai_api_key
-    # Add other environment variables as needed
-    ```
-
-### Running the Application
-
-To run the Orcish OpenAI Connector, use the following command:
-
-```bash
-pnpm start
