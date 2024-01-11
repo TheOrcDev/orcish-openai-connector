@@ -12,6 +12,10 @@ async function run() {
   ]);
 
   // Use chatGPTResult and dalle3Image as needed
+  return {
+    completion: chatGPTResult, 
+    image: dalle3Image
+  };
 }
 
 run();
