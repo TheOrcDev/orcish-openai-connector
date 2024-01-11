@@ -6,16 +6,23 @@
         "lint": "eslint . --ext .ts",
         "start": "tsc && node dist/main.js",
         "preinstall": "npx only-allow pnpm",
-        "postinstall": "husky install"
+        "postinstall": "husky install",
+        "commit": "./node_modules/cz-customizable/standalone.js"
     },
     "devDependencies": {
         "@types/node": "^20.11.0",
         "@typescript-eslint/eslint-plugin": "^6.18.1",
         "@typescript-eslint/parser": "^6.18.1",
+        "cz-customizable": "^7.0.0",
         "eslint": "^8.56.0",
         "husky": "^8.0.3"
     },
     "dependencies": {
         "dotenv": "^16.3.1"
+    },
+  "config": {
+    "cz-customizable": {
+      "config": "cz-config.js"
     }
+  }
 }
