@@ -35,7 +35,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 2. After installation, you can import and use the `OpenAIService` class in your project.
 
     ```typescript
-    import { OpenAIService, OpenAIServiceOptions } from 'orcish-openai-connector';
+    import { OpenAIService } from 'orcish-openai-connector';
 
     // Create an instance of OpenAIService
     const openaiService = new OpenAIService({
@@ -69,7 +69,7 @@ When creating an instance of `OpenAIService`, you can provide the following opti
 Example:
 
 ```typescript
-import { OpenAIService, OpenAIServiceOptions } from 'orcish-openai-connector';
+import { OpenAIService } from 'orcish-openai-connector';
 
 // Create an instance of OpenAIService with custom options
 const openaiService = new OpenAIService({
