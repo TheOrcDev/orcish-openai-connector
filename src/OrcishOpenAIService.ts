@@ -28,7 +28,7 @@ export class OrcishOpenAIService {
 
   async getChatGPTCompletion(
     input: string,
-    options: OrcishOpenAIServiceOptions
+    options?: OrcishOpenAIServiceOptions
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
@@ -54,7 +54,7 @@ export class OrcishOpenAIService {
 
   async getDalle3Image(
     prompt: string,
-    options: OrcishOpenAIServiceOptions
+    options?: OrcishOpenAIServiceOptions
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
