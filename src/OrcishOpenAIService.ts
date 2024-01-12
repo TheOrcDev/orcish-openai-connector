@@ -1,17 +1,11 @@
-type OpenAIHeaders = {
-  "Content-Type": string;
-  Authorization: string;
-  "Access-Control-Allow-Origin": string;
-};
-
-type OrcishOpenAIServiceOptions = {
-  apiKey?: string;
-  gptModel?: string;
-  gptTemperature?: string;
-  gptMaxTokens?: string;
-  imageModel?: string;
-  imageResolution?: string;
-};
+import {
+  OpenAIHeaders,
+  OrcishOpenAIServiceOptions,
+  GPTTemperature,
+  GPTModel,
+  ImageModel,
+  ImageResolution,
+} from ".";
 
 export class OrcishOpenAIService {
   private headers: OpenAIHeaders;
@@ -28,18 +22,31 @@ export class OrcishOpenAIService {
     };
   }
 
+  private getDefaultOptions(): OrcishOpenAIServiceOptions {
+    return {
+      apiKey: "",
+      gptModel: GPTModel.GPT_3_5_TURBO,
+      gptTemperature: GPTTemperature.CREATIVE_WRITING,
+      gptMaxTokens: "1048",
+      imageModel: ImageModel.DALLE_3,
+      imageResolution: ImageResolution.RESOLUTION_1024x1024,
+    };
+  }
+
   async getChatGPTCompletion(
     input: string,
     options: OrcishOpenAIServiceOptions
   ): Promise<string> {
+    const mergedOptions = { ...this.getDefaultOptions(), ...options };
+
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
-        model: options.gptModel || "gpt-3.5-turbo",
+        model: mergedOptions.gptModel,
         messages: [{ role: "user", content: input }],
-        temperature: options.gptTemperature || 0.8,
-        max_tokens: options.gptMaxTokens || 1048,
+        temperature: mergedOptions.gptTemperature,
+        max_tokens: mergedOptions.gptMaxTokens,
       }),
     });
 
@@ -56,16 +63,18 @@ export class OrcishOpenAIService {
     prompt: string,
     options: OrcishOpenAIServiceOptions
   ): Promise<string> {
+    const mergedOptions = { ...this.getDefaultOptions(), ...options };
+
     const response = await fetch(
       "https://api.openai.com/v1/images/generations",
       {
         method: "POST",
         headers: this.headers,
         body: JSON.stringify({
-          model: options.imageModel || "dall-e-3",
+          model: mergedOptions.imageModel,
           prompt,
           n: 1,
-          size: options.imageResolution || "1792x1024",
+          size: mergedOptions.imageResolution,
         }),
       }
     );
