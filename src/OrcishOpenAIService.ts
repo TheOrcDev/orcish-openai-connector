@@ -1,11 +1,4 @@
-import {
-  OpenAIHeaders,
-  OrcishOpenAIServiceOptions,
-  GPTTemperature,
-  GPTModel,
-  ImageModel,
-  ImageResolution,
-} from ".";
+import { OpenAIHeaders, OrcishOpenAIServiceOptions } from ".";
 
 export class OrcishOpenAIService {
   private headers: OpenAIHeaders;
@@ -25,11 +18,11 @@ export class OrcishOpenAIService {
   private getDefaultOptions(): OrcishOpenAIServiceOptions {
     return {
       apiKey: "",
-      gptModel: GPTModel.GPT_3_5_TURBO,
-      gptTemperature: GPTTemperature.CREATIVE_WRITING,
+      gptModel: "gpt-3.5-turbo",
+      gptTemperature: 0.8,
       gptMaxTokens: "1048",
-      imageModel: ImageModel.DALLE_3,
-      imageResolution: ImageResolution.RESOLUTION_1024x1024,
+      imageModel: "dall-e-3",
+      imageResolution: "1792x1024",
     };
   }
 
