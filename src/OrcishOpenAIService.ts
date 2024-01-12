@@ -1,4 +1,11 @@
-import { OpenAIHeaders, OrcishOpenAIServiceOptions } from ".";
+import {
+  GPTModel,
+  GPTTemperature,
+  ImageModel,
+  ImageResolution,
+  OpenAIHeaders,
+  OrcishOpenAIServiceOptions,
+} from ".";
 
 export class OrcishOpenAIService {
   private headers: OpenAIHeaders;
@@ -28,7 +35,11 @@ export class OrcishOpenAIService {
 
   async getChatGPTCompletion(
     input: string,
-    options?: Partial<OrcishOpenAIServiceOptions>
+    options?: {
+      gptModel: GPTModel;
+      gptTemperature: GPTTemperature;
+      gptMaxTokens: string;
+    }
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
@@ -54,7 +65,10 @@ export class OrcishOpenAIService {
 
   async getDalle3Image(
     prompt: string,
-    options?: Partial<OrcishOpenAIServiceOptions>
+    options?: {
+      imageModel?: ImageModel;
+      imageResolution?: ImageResolution;
+    }
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
