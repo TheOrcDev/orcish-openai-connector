@@ -1,33 +1,41 @@
 {
-    "name": "orcish-openai-connector",
-    "version": "1.2.3",
-    "author": "OrcDev <urosmiric88@gmail.com>",
-    "keywords": ["openai", "connector", "gpt", "orc", "orcdev"],
-    "license": "MIT",
-    "main": "dist/OrcishOpenAIService.js",
-    "types": "dist/OrcishOpenAIService.d.ts",
-    "scripts": {
-      "lint": "eslint . --ext .ts",
-      "build": "tsc",
-      "start": "ts-node src/OrcishOpenAIService.ts",
-      "preinstall": "npx only-allow pnpm",
-      "commit": "./node_modules/cz-customizable/standalone.js"
-    },
-    "devDependencies": {
-      "@types/node": "^20.11.0",
-      "@typescript-eslint/eslint-plugin": "^6.18.1",
-      "@typescript-eslint/parser": "^6.18.1",
-      "cz-customizable": "^7.0.0",
-      "eslint": "^8.56.0",
-      "husky": "^8.0.3",
-      "ts-node": "^10.4.0",
-      "typescript": "^4.5.5"
-    },
-    "config": {
-      "cz-customizable": {
-        "config": "cz-config.js"
-      }
-    },
-    "files": ["dist", "types"]
-  }
-  
+  "name": "orcish-openai-connector",
+  "version": "1.2.3",
+  "author": "OrcDev <urosmiric88@gmail.com>",
+  "keywords": [
+    "openai",
+    "connector",
+    "gpt",
+    "orc",
+    "orcdev"
+  ],
+  "license": "MIT",
+  "main": "dist/OrcishOpenAIService.js",
+  "types": "dist/OrcishOpenAIService.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "build": "tsc",
+    "start": "ts-node src/OrcishOpenAIService.ts",
+    "preinstall": "npx only-allow pnpm",
+    "commit": "./node_modules/cz-customizable/standalone.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "config": {
+    "cz-customizable": {
+      "config": "cz-config.js"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ]
+}
