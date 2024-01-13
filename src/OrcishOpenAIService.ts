@@ -36,9 +36,9 @@ export class OrcishOpenAIService {
   async getChatGPTCompletion(
     input: string,
     options?: {
-      gptModel: GPTModel;
-      gptTemperature: GPTTemperature;
-      gptMaxTokens: string;
+      gptModel?: GPTModel;
+      gptTemperature?: GPTTemperature;
+      gptMaxTokens?: string;
     }
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
