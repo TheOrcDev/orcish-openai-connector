@@ -44,12 +44,12 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
     });
 
     // Use OrcishOpenAIService methods
-    const chatGPTResult = await OrcishOpenAIService.getChatGPTCompletion('Cool orcish name', {
+    const chatGPTResult = await orcishOpenAIService.getChatGPTCompletion('Cool orcish name', {
       gptTemperature: 0.7,
       // Add other options as needed
     });
 
-    const dalle3Image = await OrcishOpenAIService.getDalle3Image('Orc working on a computer', {
+    const dalle3Image = await orcishOpenAIService.getDalle3Image('Orc working on a computer', {
       imageResolution: '1792x1024',
       // Add other options as needed
     });
@@ -82,12 +82,12 @@ const orcishOpenAIService = new OrcishOpenAIService({
 });
 
 // Use OrcishOpenAIService methods with custom options
-const chatGPTResult = await OrcishOpenAIService.getChatGPTCompletion('Cool orcish name', {
+const chatGPTResult = await orcishOpenAIService.getChatGPTCompletion('Cool orcish name', {
   gptTemperature: '0.7',
   // Add other options as needed
 });
 
-const dalle3Image = await OrcishOpenAIService.getDalle3Image('Orc working on a computer', {
+const dalle3Image = await orcishOpenAIService.getDalle3Image('Orc working on a computer', {
   imageResolution: '1792x1024',
   // Add other options as needed
 });
