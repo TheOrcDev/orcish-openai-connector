@@ -4,7 +4,6 @@ export type OpenAIHeaders = {
   "Access-Control-Allow-Origin": string;
 };
 
-// types.ts
 export type GPTModel =
   | "gpt-3.5-turbo-1106"
   | "gpt-3.5-turbo"

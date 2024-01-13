@@ -41,25 +41,32 @@ export class OrcishOpenAIService {
       gptMaxTokens?: number;
     }
   ): Promise<string> {
-    const mergedOptions = { ...this.getDefaultOptions(), ...options };
+    try {
+      const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: this.headers,
-      body: JSON.stringify({
-        model: mergedOptions.gptModel,
-        messages: [{ role: "user", content: prompt }],
-        temperature: mergedOptions.gptTemperature,
-        max_tokens: mergedOptions.gptMaxTokens,
-      }),
-    });
+      const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: this.headers,
+          body: JSON.stringify({
+            model: mergedOptions.gptModel,
+            messages: [{ role: "user", content: prompt }],
+            temperature: mergedOptions.gptTemperature,
+            max_tokens: mergedOptions.gptMaxTokens,
+          }),
+        }
+      );
 
-    const data = await response.json();
-    if (data.choices[0].finish_reason === "length") {
-      throw new Error("Too long prompt");
+      const data = await response.json();
+      if (data.choices[0].finish_reason === "length") {
+        throw new Error("Too long prompt");
+      }
+
+      return data.choices[0].message.content;
+    } catch (error) {
+      throw "Encountered an issue while attempting to work with GPT by OpenAI";
     }
-
-    return data.choices[0].message.content;
   }
 
   async getDalle3Image(
@@ -69,24 +76,28 @@ export class OrcishOpenAIService {
       imageResolution?: ImageResolution;
     }
   ): Promise<string> {
-    const mergedOptions = { ...this.getDefaultOptions(), ...options };
+    try {
+      const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
-    const response = await fetch(
-      "https://api.openai.com/v1/images/generations",
-      {
-        method: "POST",
-        headers: this.headers,
-        body: JSON.stringify({
-          model: mergedOptions.imageModel,
-          prompt,
-          n: 1,
-          size: mergedOptions.imageResolution,
-        }),
-      }
-    );
+      const response = await fetch(
+        "https://api.openai.com/v1/images/generations",
+        {
+          method: "POST",
+          headers: this.headers,
+          body: JSON.stringify({
+            model: mergedOptions.imageModel,
+            prompt,
+            n: 1,
+            size: mergedOptions.imageResolution,
+          }),
+        }
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    return data.data[0].url;
+      return data.data[0].url;
+    } catch (error) {
+      throw "Encountered an issue while attempting to retrieve images from OpenAI";
+    }
   }
 }
