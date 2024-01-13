@@ -27,7 +27,7 @@ export class OrcishOpenAIService {
       apiKey: "",
       gptModel: "gpt-3.5-turbo",
       gptTemperature: 0.8,
-      gptMaxTokens: "1048",
+      gptMaxTokens: 1048,
       imageModel: "dall-e-3",
       imageResolution: "1792x1024",
     };
@@ -38,7 +38,7 @@ export class OrcishOpenAIService {
     options?: {
       gptModel?: GPTModel;
       gptTemperature?: GPTTemperature;
-      gptMaxTokens?: string;
+      gptMaxTokens?: number;
     }
   ): Promise<string> {
     const mergedOptions = { ...this.getDefaultOptions(), ...options };
@@ -55,7 +55,6 @@ export class OrcishOpenAIService {
     });
 
     const data = await response.json();
-
     if (data.choices[0].finish_reason === "length") {
       throw new Error("Too long prompt");
     }

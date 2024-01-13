@@ -40,7 +40,7 @@ export type OrcishOpenAIServiceOptions = {
   apiKey: string;
   gptModel?: GPTModel;
   gptTemperature?: GPTTemperature;
-  gptMaxTokens?: string;
+  gptMaxTokens?: number;
   imageModel?: ImageModel;
   imageResolution?: ImageResolution;
 };
