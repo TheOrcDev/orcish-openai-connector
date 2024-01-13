@@ -34,7 +34,7 @@ export class OrcishOpenAIService {
   }
 
   async getChatGPTCompletion(
-    input: string,
+    prompt: string,
     options?: {
       gptModel?: GPTModel;
       gptTemperature?: GPTTemperature;
@@ -48,7 +48,7 @@ export class OrcishOpenAIService {
       headers: this.headers,
       body: JSON.stringify({
         model: mergedOptions.gptModel,
-        messages: [{ role: "user", content: input }],
+        messages: [{ role: "user", content: prompt }],
         temperature: mergedOptions.gptTemperature,
         max_tokens: mergedOptions.gptMaxTokens,
       }),
