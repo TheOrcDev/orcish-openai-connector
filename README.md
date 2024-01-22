@@ -1,4 +1,4 @@
-![orc-connector](https://github.com/TheOrcDev/orcish-openai-connector/assets/7549148/9612d9ac-bb86-4204-a15a-9e2983deda3f)
+![Untitled design](https://github.com/TheOrcDev/orcish-openai-connector/assets/7549148/9d40b85c-1b87-440d-9ac3-334b3442e113)
 
 # Orcish OpenAI Connector
 
