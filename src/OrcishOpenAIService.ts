@@ -59,6 +59,11 @@ export class OrcishOpenAIService {
       );
 
       const data = await response.json();
+
+      if (data.error) {
+        throw JSON.stringify(data.error);
+      }
+
       if (data.choices[0].finish_reason === "length") {
         throw new Error("Too long prompt");
       }
