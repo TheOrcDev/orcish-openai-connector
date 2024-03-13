@@ -25,12 +25,7 @@ module.exports = {
     { value: "WIP", name: "WIP:      Work in progress" },
   ],
 
-  scopes: [
-    { name: "ui" },
-    { name: "pages" },
-    { name: "lib" },
-    { name: "config" },
-  ],
+  scopes: [{ name: "lib" }, { name: "config" }],
 
   usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
   allowTicketNumber: false,
@@ -42,7 +37,6 @@ module.exports = {
   messages: {
     type: "Select the type of change that you're committing:",
     scope: "\nDenote the SCOPE of this change (optional):",
-    // used if allowCustomScopes is true
     customScope: "Denote the SCOPE of this change:",
     subject: "Write a SHORT, IMPERATIVE tense description of the change:\n",
     body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
