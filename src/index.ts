@@ -31,6 +31,9 @@ export type GPTTemperature =
   | 0.8
   | 0.9;
 
+export type Voice = "alloy" | "echo" | "fable" | "onyx" | "nova" | "shimmer";
+export type VoiceModel = "tts-1" | "tts-1-hd";
+
 export type ImageModel = "dall-e-2" | "dall-e-3";
 
 export type ImageResolution = "1792x1024" | "1024x1024" | "1024x1792";
@@ -42,4 +45,6 @@ export type OrcishOpenAIServiceOptions = {
   gptMaxTokens?: number;
   imageModel?: ImageModel;
   imageResolution?: ImageResolution;
+  voice?: Voice;
+  voiceModel?: VoiceModel;
 };

@@ -5,6 +5,8 @@ import {
   ImageResolution,
   OpenAIHeaders,
   OrcishOpenAIServiceOptions,
+  Voice,
+  VoiceModel,
 } from ".";
 
 export class OrcishOpenAIService {
@@ -30,6 +32,7 @@ export class OrcishOpenAIService {
       gptMaxTokens: 1048,
       imageModel: "dall-e-3",
       imageResolution: "1792x1024",
+      voice: "alloy",
     };
   }
 
@@ -103,6 +106,32 @@ export class OrcishOpenAIService {
       return data.data[0].url;
     } catch (error) {
       throw "Encountered an issue while attempting to retrieve images from OpenAI";
+    }
+  }
+
+  async textToSpeech(
+    prompt: string,
+    options?: {
+      voice?: Voice;
+      voiceModel?: VoiceModel;
+    }
+  ): Promise<Blob> {
+    try {
+      const mergedOptions = { ...this.getDefaultOptions(), ...options };
+
+      const response = await fetch("https://api.openai.com/v1/audio/speech", {
+        method: "POST",
+        headers: this.headers,
+        body: JSON.stringify({
+          model: "tts-1",
+          voice: mergedOptions.voice,
+          input: prompt,
+        }),
+      });
+
+      return await response.blob();
+    } catch (error) {
+      throw "Encountered an issue while attempting to retrieve speech to text from OpenAI";
     }
   }
 }
