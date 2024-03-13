@@ -115,7 +115,7 @@ export class OrcishOpenAIService {
       voice?: Voice;
       voiceModel?: VoiceModel;
     }
-  ): Promise<Blob> {
+  ): Promise<string> {
     try {
       const mergedOptions = { ...this.getDefaultOptions(), ...options };
 
@@ -129,7 +129,7 @@ export class OrcishOpenAIService {
         }),
       });
 
-      return await response.blob();
+      return URL.createObjectURL(await response.blob());
     } catch (error) {
       throw "Encountered an issue while attempting to retrieve speech to text from OpenAI";
     }
