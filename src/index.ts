@@ -32,6 +32,7 @@ export type GPTTemperature =
   | 0.9;
 
 export type Voice = "alloy" | "echo" | "fable" | "onyx" | "nova" | "shimmer";
+
 export type VoiceModel = "tts-1" | "tts-1-hd";
 
 export type ImageModel = "dall-e-2" | "dall-e-3";

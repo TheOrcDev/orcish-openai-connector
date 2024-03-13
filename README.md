@@ -84,4 +84,6 @@ const dalle3Image = await orcishOpenAIService.getDalle3Image('Orc working on a c
   imageResolution: '1792x1024',
   // Add other options as needed
 });
+
+const textToSpeech = await orcishOpenAIService.textToSpeech('This is an AI Voice. Hello!');
 ```
