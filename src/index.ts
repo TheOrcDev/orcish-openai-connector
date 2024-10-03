@@ -39,6 +39,8 @@ export type ImageModel = "dall-e-2" | "dall-e-3";
 
 export type ImageResolution = "1792x1024" | "1024x1024" | "1024x1792";
 
+export type ResponseFormat = "json_object" | "text";
+
 export type OrcishOpenAIServiceOptions = {
   apiKey: string;
   gptModel?: GPTModel;
@@ -48,4 +50,5 @@ export type OrcishOpenAIServiceOptions = {
   imageResolution?: ImageResolution;
   voice?: Voice;
   voiceModel?: VoiceModel;
+  responseFormat?: ResponseFormat;
 };

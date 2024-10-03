@@ -5,6 +5,7 @@ import {
   ImageResolution,
   OpenAIHeaders,
   OrcishOpenAIServiceOptions,
+  ResponseFormat,
   Voice,
   VoiceModel,
 } from ".";
@@ -42,7 +43,7 @@ export class OrcishOpenAIService {
       gptModel?: GPTModel;
       gptTemperature?: GPTTemperature;
       gptMaxTokens?: number;
-      responseFormat?: "json_object" | "text";
+      responseFormat?: ResponseFormat;
     }
   ): Promise<string> {
     try {
@@ -58,7 +59,7 @@ export class OrcishOpenAIService {
             messages: [{ role: "user", content: prompt }],
             temperature: mergedOptions.gptTemperature,
             max_tokens: mergedOptions.gptMaxTokens,
-            response_format: { type: mergedOptions.responseFormat ?? "text" },
+            response_format: { type: mergedOptions.responseFormat || "text" },
           }),
         }
       );
